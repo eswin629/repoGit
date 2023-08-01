@@ -1,0 +1,243 @@
+::::repo GIT::::
+
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args) {
+        // System.out.println("Welcome to Online IDE!! Happy Coding :)");
+        // System.out.println(derbilganjinlmenurun(9));
+        // System.out.println(mencarihurufvokal("Rahmat Dahlia onsle"));
+        System.out.println(gangenjumlahkar("Rahmat onsle"));
+    }
+    
+    // no 1 deret bilangan ganjil
+    public static List<Integer> derbilganjinlmenurun(int sampleIn1){
+    List<Integer>numbers = new ArrayList<Integer>();
+    for(int i=sampleIn1; i>0;i--){
+        if(i%2==1){
+            numbers.add(i);
+        }
+    }    
+    return numbers;
+    }
+    
+    // no 2 mencari huruf vokal
+    public static String mencarihurufvokal(String sampleIn2){
+        int lengtstring = sampleIn2.length();
+        String append = "";
+        
+        for(int i=0; i<lengtstring;i++){
+            if(sampleIn2.charAt(i) == 'a'||
+            sampleIn2.charAt(i) == 'A'||
+            sampleIn2.charAt(i) == 'e'||
+            sampleIn2.charAt(i) == 'E'||
+            sampleIn2.charAt(i) == 'i'||
+            sampleIn2.charAt(i) == 'I'||
+            sampleIn2.charAt(i) == 'o'||
+            sampleIn2.charAt(i) == 'O'||
+            sampleIn2.charAt(i) == 'u'||
+            sampleIn2.charAt(i) == 'U'
+            ){
+                append = append + String.valueOf(sampleIn2.charAt(i));
+            }
+        }
+        return append;
+    }
+    
+    // 3 menentukan ganjil genap jumlah karakter
+    public static String gangenjumlahkar(String sampleIn3){
+        if(sampleIn3.length() %2 == 0){
+            return "Genap";
+        }
+        else{
+            return "Ganjil";
+        }
+    }
+    
+}
+
+
+public class Main
+{
+    public static void main(String[] args) {
+        // System.out.println("Welcome to Online IDE!! Happy Coding :)");
+    //   System.out.println(gantiHurufVokalDenganAngka("Indonesia Raya naya"));
+       System.out.println(membalikkankata("senorita kaligis"));
+    } 
+      // 4. Ganti huruf vokal dengan angka
+      public static String gantiHurufVokalDenganAngka(String sampleIn){
+          int lengthString = sampleIn.length();
+          
+          String append = sampleIn;
+          for(int i=0; i<lengthString;i++){
+              if(sampleIn.charAt(i) == 'a' || sampleIn.charAt(i) == 'A'){
+                  append = append.replace(String.valueOf(sampleIn.charAt(i)), "1");
+                }
+                else if(sampleIn.charAt(i) == 'i' || sampleIn.charAt(i) == 'I' ){
+                    append = append.replace(String.valueOf(sampleIn.charAt(i)),"2");
+                }
+                else if(sampleIn.charAt(i) == 'u' || sampleIn.charAt(i) == 'U'){
+                    append = append.replace(String.valueOf(sampleIn.charAt(i)), "3" );
+                }
+                else if(sampleIn.charAt(i) == 'e' || sampleIn.charAt(i) == 'E'){
+                    append = append.replace(String.valueOf(sampleIn.charAt(i)), "4"); 
+                }
+                else if(sampleIn.charAt(i) == 'o' || sampleIn.charAt(i) == 'O'){
+                    append=append.replace(String.valueOf(sampleIn.charAt(i)), "5");
+                }
+                else{
+                    append = append;
+                }
+            
+          }
+          return append;
+      }
+      
+    //   05. membalikkan kata
+    public static String membalikkankata(String sampleIn){
+        
+        int lengthString = sampleIn.length();
+        String append = "";
+        
+        for(int i=(lengthString-1); i>=0;i--){
+            append = append + String.valueOf(sampleIn.charAt(i));
+        }
+        return append;
+    }
+}
+
+
+==============================================================================================================
+
+
+
+1. //Tampilkan angka kelipatan 3, kelipatan 5, kelipatan 3 dan 5
+public class Main
+{
+	public static void main(String[] args) {
+		
+		System.out.println(tampilkanAngka(15));
+	}
+// 	Tampilkan angka kelipatan 3, kelipatan 5, kelipatan 3 dan 5
+    public static String tampilkanAngka(int sampleIn){
+        String num="";
+        for(int i=1;i<=sampleIn;i++){
+            
+            if(i%3==0 && i%5==0){
+             num= num +i +" adalah kelipatan 3 dan 5 \n";
+            }
+            else if(i%5==0){
+                num=num +i +" adalah kelipatan 5 \n";
+            }
+            else if(i%3==0){
+                num=num +i +" adalah kelipatan 3 \n";
+            }
+            else{
+                num=num+i+"\n";
+                
+            }
+            
+        }
+        return num;
+    }
+
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+2. Print Arloji 
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		
+		System.out.println(printArloji({"Swiss Army","Dublot","G-Shock"}));
+	}
+// 	Print Arloji
+    // public static List<String> printArloji(String sampleIn){
+    public static String[] printArloji(String[] sampleIn){
+        String[] appen=sampleIn;
+        // List<String> appen = new ArrayList<String>();
+        for(int i=0;i<sampleIn.length();i++){
+            if(sampleIn.charAt(i)=='"' || sampleIn.charAt(i)=="'"){
+                appen = appen.replace(String.valueOf(sampleIn.charAt(i)),"");
+            }
+            else{
+                appen=appen;
+            }
+            
+        }
+        return "Saya punya"+appen;
+    }
+
+}
+///////////////////////////////////////////////////////////////////////////////////////////
+
+3a. //bilangan prima
+
+
+public class Main
+{
+	public static void main(String[] args) {
+		
+		System.out.println(cekBilanganPrima(17));
+	}
+// 	Cek apakah bilangan Prima
+    public static String cekBilanganPrima(int sampleIn){
+        String num="";
+        for(int i=2;i<=sampleIn;i++){
+            boolean result=true;
+            for(int j=2;j<i;j++){
+                if(i%j==0){
+                result=false;
+                break;
+                }
+            }
+           
+        
+        if(result==true){
+            
+            num= num+i+" adalah bilangan prima\n";
+        }
+        else{
+            num= num+i+" adalah bukan bilangan prima\n";
+        }
+        }
+        return num;
+        
+    }
+}
+
+3b. bilangan prima/bukan bilangan prima
+public class Main
+{
+	public static void main(String[] args) {
+		
+		System.out.println(cekBilanganPrima(15));
+	}
+// 	Cek apakah bilangan Prima
+    public static String cekBilanganPrima(int sampleIn){
+        String num="";
+        for(int i=2;i<=sampleIn;i++){
+            boolean result=true;
+            for(int j=2;j<i;j++){
+                if(i%j==0){
+                result=false;
+                break;
+                }
+            }
+           
+//num=num+sampleIn+" adalah bilangan prima";        
+        if(result==true){
+            
+            num=sampleIn+" adalah bilangan prima";
+        }
+        else{
+            num=sampleIn+" adalah bukan bilangan prima";
+        }
+        }
+        return num;
+        
+    }
+
+}
