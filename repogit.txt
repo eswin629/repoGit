@@ -241,3 +241,45 @@ public class Main
     }
 
 }
+
+
+//bandingkan 3 array, memprint kata pertama
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args) {
+        myTrial();
+        
+    }
+    static void myTrial(){
+    List<String> numbers = new ArrayList();
+    numbers.add("halo dunia");
+    numbers.add("makan nasi goreng");
+    numbers.add("ini rumahnya budi");
+    System.out.println(numbers);
+    
+    String[] numbers2=new String[numbers.size()];
+    numbers2=numbers.toArray(numbers2);
+    
+    String numbers3[]=numbers2[0].split(" ");
+    String numbers4[]=numbers2[1].split(" ");
+    String numbers5[]=numbers2[2].split(" ");
+    
+    if(numbers3[0].length()>numbers4[0].length()){
+        if(numbers3[0].length()>numbers5[0].length()){
+        System.out.println(numbers3[0]);
+        }
+    }
+    else if(numbers4[0].length()>numbers3[0].length()){
+        if(numbers4[0].length()>numbers5[0].length()){
+        System.out.println(numbers4[0]);
+        }
+    }
+    else if(numbers5[0].length()>numbers4[0].length()){
+        if(numbers5[0].length()>numbers3[0].length()){
+        System.out.println(numbers5[0]);
+        }
+    }
+    }
+}
