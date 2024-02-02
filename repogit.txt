@@ -283,3 +283,103 @@ public class Main
     }
     }
 }
+
+
+
+
+//palindrom
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a word: ");
+        String word = scanner.nextLine();
+
+        if (isPalindrome(word)) {
+            System.out.println(word + " is a palindrome.");
+        } else {
+            System.out.println(word + " is not a palindrome.");
+        }
+    }
+
+    private static boolean isPalindrome(String str) {
+        str = str.toLowerCase(); // Convert to lowercase for case-insensitive comparison
+        int left = 0;
+        int right = str.length() - 1;
+
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+
+        return true;
+    }
+}
+
+// MITech ,, 11,22,33,44,55,66,77,88,99
+public class Main {
+    public static void main(String[] args) {
+        int[] inputArray = {11, 22, 33, 44, 55, 66, 77, 88, 99};
+
+        System.out.print("-");
+        for (int i = 1; i < inputArray.length - 1; i += 2) {
+            System.out.print("*" + inputArray[i] + "*");
+        }
+        System.out.print("-");
+    }
+}
+
+//whie loop 1-10
+public class Main {
+    public static void main(String[] args) {
+        int i = 1;
+        while (i <= 10) {
+            System.out.println(i);
+            i++;
+        }
+    }
+}
+
+
+tes code NDS
+public class Main {
+    public static void main(String[] args) {
+        int[] array1 = {1, 4};
+        int[] array2 = {2, 3, 6};
+
+        System.out.println("Array " + arrayToString(array1) + " = " + checkModulus(array1));
+        System.out.println("Array " + arrayToString(array2) + " = " + checkModulus(array2));
+    }
+
+    static boolean checkModulus(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            int modulusResult = arr[i] % (i + 1);
+
+            // Menggunakan operator ternary untuk menentukan hasil
+            boolean isModulusTrue = (modulusResult == 0) ? true : false;
+
+            // Jika hasil modulus tidak sesuai dengan kondisi yang diinginkan, mengembalikan false
+            if (!isModulusTrue) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    static String arrayToString(int[] arr) {
+        StringBuilder result = new StringBuilder();
+        result.append("[");
+        for (int i = 0; i < arr.length; i++) {
+            result.append(arr[i]);
+            if (i < arr.length - 1) {
+                result.append(", ");
+            }
+        }
+        result.append("]");
+        return result.toString();
+    }
+}
